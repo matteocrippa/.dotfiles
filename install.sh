@@ -18,6 +18,9 @@ yay -Sy neovim neovim-symlinks nodejs-neovim
 # extra
 yay -Sy neofetch
 
+# browser
+yay -Sy fedora-firefox-wayland-bin chromium-dev-ozone
+
 # performance
 yay -Sy acpi acpi_call tlp cpupower tp-battery-mode
 cat tlp | sudo tee /etc/default/tlp
