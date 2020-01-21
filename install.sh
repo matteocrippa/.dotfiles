@@ -1,6 +1,9 @@
 # sway
 yay -Sy sway-git lxsession wdisplays mako
 
+# video
+yay -Sy libva-intel-driver-hybrid
+
 # vm
 yay -Sy vmware-workspace open-vm-tools
 sudo systemctl mask usbmuxd.service
@@ -18,8 +21,10 @@ yay -Sy neovim neovim-symlinks nodejs-neovim
 # extra
 yay -Sy neofetch
 
+# tools
+
 # browser
-yay -Sy fedora-firefox-wayland-bin chromium-dev-ozone
+yay -Sy firefox chromium-dev-ozone
 
 # performance
 yay -Sy acpi acpi_call tlp cpupower tp-battery-mode
