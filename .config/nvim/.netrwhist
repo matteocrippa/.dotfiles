@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/home/matteo/Work/Repositories/qdp-preventivatore-techsheet'
+let g:netrw_dirhist_9='/home/matteo/Work/Repositories/qdp-preventivatore-techsheet/.git'
+let g:netrw_dirhist_8='/home/matteo/Work/Repositories/qdp-preventivatore-techsheet'
+let g:netrw_dirhist_7='/home/matteo/Work/Repositories/qdp-preventivatore-techsheet/.git'
+let g:netrw_dirhist_6='/home/matteo/Work/Repositories/qdp-preventivatore-techsheet'
+let g:netrw_dirhist_5='/home/matteo/.config/configstore'
+let g:netrw_dirhist_4='/home/matteo/Downloads/dotfiles/.config/sway/rbn-desktop-arch'
+let g:netrw_dirhist_3='/home/matteo/Downloads/dotfiles-mine/config'
+let g:netrw_dirhist_2='/home/matteo/Downloads/dotfiles-mine/rofi'
+let g:netrw_dirhist_1='/home/matteo/Downloads/dotfiles-mine/scripts'
