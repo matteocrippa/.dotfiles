@@ -16,7 +16,10 @@ yay -Sy charles insomnia
 yay -Sy libreoffice-fresh filezilla
 
 # editor
-yay -Sy neovim neovim-symlinks nodejs-neovim
+yay -Sy neovim neovim-symlinks nodejs-neovim python2-neovim python-neovim 
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+yay -Sy the_silver_searcher
 
 # extra
 yay -Sy neofetch
@@ -59,3 +62,10 @@ git config --global core.editor "nvim"
 git config --global user.name "matteocrippa"
 git config --global user.email "matteocrippa@users.noreply.github.com"
 
+
+# avizo custom
+git clone https://github.com/matteocrippa/avizo.git /tmp/avizo
+cd /tmp/avizo
+meson build
+cd build
+ninja install
