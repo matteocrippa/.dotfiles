@@ -1,5 +1,5 @@
 # sway
-yay -Sy sway-git lxsession wdisplays mako
+yay -Sy sway-git waybar-git lxsession wdisplays mako
 
 # video
 yay -Sy libva-intel-driver-hybrid
@@ -25,6 +25,7 @@ yay -Sy the_silver_searcher
 yay -Sy neofetch
 
 # tools
+yay -Sy exa
 
 # browser
 yay -Sy firefox chromium-dev-ozone
@@ -49,7 +50,7 @@ sudo systemctl enable --now org.cups.cupsd.service
 sudo systemctl start org.cups.cupsd.service
 
 # image
-yay -Sy krita libheif
+yay -Sy vlc krita libheif
 
 # cleanup
 yay -Ycc
