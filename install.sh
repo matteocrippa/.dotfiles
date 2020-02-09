@@ -1,5 +1,5 @@
 # sway
-yay -Sy sway-git waybar-git lxsession wdisplays mako
+yay -Sy sway-git waybar lxsession wdisplays mako
 
 # video
 yay -Sy libva-intel-driver-hybrid
@@ -9,8 +9,9 @@ yay -Sy vmware-workspace open-vm-tools
 sudo systemctl mask usbmuxd.service
 
 # development
-yay -Sy android-studio intellij-idea-ultimate-edition
+yay -Sy android-studio
 yay -Sy charles insomnia
+yay -Sy flutter
 
 # office
 yay -Sy libreoffice-fresh filezilla
