@@ -9,9 +9,22 @@ yay -Sy vmware-workspace open-vm-tools
 sudo systemctl mask usbmuxd.service
 
 # development
-yay -Sy android-studio
+yay -Sy android-studio-canary jdk-openjdk
 yay -Sy charles insomnia
-yay -Sy flutter
+
+
+# flutter manually
+git clone https://github.com/flutter/flutter.git -b stable ~/SDK/Flutter
+echo "export PATH=$PATH:/home/matteo/SDK/Flutter/bin" >> ~/.profile
+source ~/.profile
+flutter precache
+flutter doctor
+
+sudo groupadd flutterusers
+sudo gpasswd -a matteo flutterusers
+sudo chown -R :flutterusers /opt/flutter
+sudo chmod -R g+w /opt/flutter
+
 
 # office
 yay -Sy libreoffice-fresh filezilla
@@ -29,7 +42,7 @@ yay -Sy neofetch
 yay -Sy exa
 
 # browser
-yay -Sy firefox chromium-dev-ozone
+yay -Sy firefox ungoogled-chromium
 
 # performance
 yay -Sy acpi acpi_call tlp cpupower tp-battery-mode
