@@ -9,8 +9,9 @@ yay -Sy vmware-workspace open-vm-tools
 sudo systemctl mask usbmuxd.service
 
 # development
-yay -Sy android-studio-canary jdk-openjdk
+yay -Sy android-studio jdk-openjdk
 yay -Sy charles insomnia
+yay -Sy code-git
 
 
 # flutter manually
