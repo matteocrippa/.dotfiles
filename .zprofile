@@ -1,5 +1,6 @@
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
-    	export CLUTTER_BACKEND=wayland
+	export LIBVA_DRIVER_NAME=i965
+	export CLUTTER_BACKEND=wayland
 	export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 	export QT_WAYLAND_FORCE_DPI=physical
 	export ECORE_EVAS_EVAS_ENGINE=wayland_egl
@@ -7,5 +8,6 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 	export SDL_VIDEODRIVER=wayland
 	export _JAVA_AWT_WM_NONREPARENTING=1
 	export MOZ_ENABLE_WAYLAND=1
-    	XKB_DEFAULT_LAYOUT=us exec sway
+	#export QT_ENABLE_HIGHDPI_SCALING=0
+	XKB_DEFAULT_LAYOUT=us exec sway
 fi

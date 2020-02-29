@@ -1,0 +1,8 @@
+[Added Associations]
+application/pdf=org.gnome.Evince.desktop;
+application/vnd.openxmlformats-officedocument.presentationml.presentation=org.kde.ark.desktop;
+application/json=mousepad.desktop;nvim.desktop;
+application/zip=libreoffice-calc.desktop;org.gnome.FileRoller.desktop;
+
+[Default Applications]
+application/zip=org.gnome.FileRoller.desktop
