@@ -38,7 +38,7 @@ yay -Sy the_silver_searcher
 yay -Sy neofetch
 
 # tools
-yay -Sy exa arch-audit-git
+yay -Sy exa
 
 # browser
 yay -Sy firefox # ungoogled-chromium
