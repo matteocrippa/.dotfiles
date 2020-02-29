@@ -16,8 +16,6 @@ yay -Sy code-git
 
 # flutter manually
 git clone https://github.com/flutter/flutter.git -b stable ~/SDK/Flutter
-echo "export PATH=$PATH:/home/matteo/SDK/Flutter/bin" >> ~/.profile
-source ~/.profile
 flutter precache
 flutter doctor
 
@@ -40,10 +38,10 @@ yay -Sy the_silver_searcher
 yay -Sy neofetch
 
 # tools
-yay -Sy exa
+yay -Sy exa arch-audit-git
 
 # browser
-yay -Sy firefox ungoogled-chromium
+yay -Sy firefox # ungoogled-chromium
 
 # performance
 yay -Sy acpi acpi_call tlp cpupower tp-battery-mode
@@ -74,14 +72,7 @@ yay -Ycc
 sudo passwd -l root
 
 # git setup
-git config --global core.editor "nvim"
+git config --global core.editor "vim"
 git config --global user.name "matteocrippa"
 git config --global user.email "matteocrippa@users.noreply.github.com"
 
-
-# avizo custom
-git clone https://github.com/matteocrippa/avizo.git /tmp/avizo
-cd /tmp/avizo
-meson build
-cd build
-ninja install

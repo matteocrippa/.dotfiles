@@ -8,3 +8,5 @@ Run terminal
 ```bash
 ./install
 ```
+
+Copy manually . files in ~
