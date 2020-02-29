@@ -1,0 +1,271 @@
+### VARIABLES
+# Font
+set $font MesloLGS NF Regular 10
+
+# Background image
+set $background Phoenix-dark-grey.png
+
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+
+# Terminal + Rofi
+set $term termite
+set $menu rofi -location 0 -show combi | xargs swaymsg exec
+
+# Background
+output * bg ~/.config/wallpaper.jpg fill
+
+# Font
+font pango:$font
+
+# Gaps
+smart_gaps on
+default_border pixel 1
+gaps inner 5
+gaps outer 5
+hide_edge_borders smart
+client.focused #ffffff40 #ffffff40 #ffffff40 #ffffff40 #ffffff40
+
+# Idle configuration
+# This will lock your screen after 300 seconds of inactivity, then turn off
+# your displays after another 305 seconds, and turn your screens back on when
+# resumed. It will also lock your screen before your computer goes to sleep.
+exec swayidle -w \
+         timeout 300 'swaylock -f -c 000000 -i ~/.config/wallpaper.jpg' \
+         timeout 305 'swaymsg "output * dpms off"' \
+              resume 'swaymsg "output * dpms on"' \
+         before-sleep 'swaylock -f -c 000000 -i ~/.config/wallpaper.jpg'
+
+
+# Lock screen
+bindsym $mod+m exec swaylock -f -i ~/.config/wallpaper.jpg
+
+# Input configuration
+# You can get the names of your inputs by running: swaymsg -t get_inputs
+# Read `man 5 sway-input` for more information about this section.
+
+input 1739:0:Synaptics_TM3276-022 {
+	# enable tap on trackpad
+  	tap enabled
+	#Clickfinger works even if this is enabled
+	click_method button_areas
+	#click_method clickfinger
+	accel_profile adaptive
+	dwt enabled
+	#dwt disabled
+    	#drag enabled
+	drag_lock enabled
+}
+
+
+### Key bindings
+#
+# Basics:
+#
+    # start a terminal
+    bindsym $mod+Return exec $term
+
+    # kill focused window
+    bindsym $mod+Shift+q kill
+
+    # start your launcher
+    bindsym $mod+Space exec $menu
+
+    # Drag floating windows by holding down $mod and left mouse button.
+    # Resize them with right mouse button + $mod.
+    # Despite the name, also works for non-floating windows.
+    # Change normal to inverse to use left mouse button for resizing and right
+    # mouse button for dragging.
+    floating_modifier $mod normal
+
+    # reload the configuration file
+    bindsym $mod+Shift+c reload
+
+#
+# Moving around:
+#
+    # Move your focus around
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
+
+    # _move_ the focused window with the same, but add Shift
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Right move right
+
+#
+# Workspaces:
+#
+    set $ws1    1
+    set $ws2    2
+    set $ws3    3
+    set $ws4    4
+    set $ws5    5
+    set $ws6    6
+    set $ws7    7
+    set $ws8    8
+    set $ws9    9
+    set $ws0    10
+
+    # Assing workspaces
+    for_window [class="firefox"] move container|window to workspace $ws1
+    for_window [class="Vmplayer"] move container|window to workspace $ws9
+
+    # Assign default workspaces
+    # for easy debug use $ swaymsg -t get_tree | grep "app_id"
+    # or swaymsg -t get_tree | grep "class"
+    #assign [app_id="termite" ] $ws1
+    assign [app_id="firefox"] $ws2
+    assign [class="code-git"] $ws4
+    assign [class="^jetbrains-ideas$"] $ws7
+    assign [class="^jetbrains-studio$"] $ws8
+    assign [class="Vmplayer"] $ws9
+    assign [class="KeePassXC"] $ws0
+
+    # switch to workspace
+    bindsym $mod+1   workspace $ws1
+    bindsym $mod+2   workspace $ws2
+    bindsym $mod+3   workspace $ws3
+    bindsym $mod+4   workspace $ws4
+    bindsym $mod+5   workspace $ws5
+    bindsym $mod+6   workspace $ws6
+    bindsym $mod+7   workspace $ws7
+    bindsym $mod+8   workspace $ws8
+    bindsym $mod+9   workspace $ws9
+    bindsym $mod+0   workspace $ws0
+
+    # move focused container to workspace
+    bindsym $mod+Shift+1    move container to workspace $ws1
+    bindsym $mod+Shift+2    move container to workspace $ws2
+    bindsym $mod+Shift+3    move container to workspace $ws3
+    bindsym $mod+Shift+4    move container to workspace $ws4
+    bindsym $mod+Shift+5    move container to workspace $ws5
+    bindsym $mod+Shift+6    move container to workspace $ws6
+    bindsym $mod+Shift+7    move container to workspace $ws7
+    bindsym $mod+Shift+8    move container to workspace $ws8
+    bindsym $mod+Shift+9    move container to workspace $ws9
+    bindsym $mod+Shift+0    move container to workspace $ws0
+
+#
+# Layout stuff:
+#
+    # You can "split" the current object of your focus with
+    # $mod+b or $mod+v, for horizontal and vertical splits
+    # respectively.
+    bindsym $mod+Shift+h splith
+    bindsym $mod+Shift+v splitv
+
+    # Switch the current container between different layout styles
+    bindsym $mod+Shift+s layout stacking
+    bindsym $mod+Shift+w layout tabbed
+    bindsym $mod+Shift+e layout toggle split
+
+    # Make the current focus fullscreen
+    bindsym $mod+f fullscreen
+
+    # Toggle the current focus between tiling and floating mode
+    bindsym $mod+Shift+space floating toggle
+
+    # Swap focus between the tiling area and the floating area
+    bindsym $mod+Tab focus mode_toggle
+
+    # move focus to the parent container
+    bindsym $mod+a focus parent
+#
+# Scratchpad:
+#
+    # Sway has a "scratchpad", which is a bag of holding for windows.
+    # You can send windows there and get them back later.
+
+    # Move the currently focused window to the scratchpad
+    bindsym $mod+Shift+minus move scratchpad
+
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    # If there are multiple scratchpad windows, this command cycles through them.
+    bindsym $mod+minus scratchpad show
+#
+# Resizing containers:
+#
+mode "resize" {
+    # Ditto, with arrow keys
+    bindsym Left resize grow width 10px
+    bindsym Down resize shrink height 10px
+    bindsym Up resize grow height 10px
+    bindsym Right resize shrink width 10px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# Load waybar
+bar {
+    swaybar_command waybar
+}
+
+
+#
+# System Mode
+#
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id "swaylock -f -c 000000 -i ~/.config/wallpaper.jpg", mode "default"
+    bindsym e exec --no-startup-id swaymsg exit, mode "default"
+    bindsym s exec --no-startup-id swaylock -f && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id swaylock -f && systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot -i, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Shift+Escape mode "$mode_system"
+
+# Multimedia
+bindsym --locked XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5%
+bindsym --locked XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') -5%
+bindsym --locked XF86AudioMute exec --no-startup-id pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle
+bindsym --locked XF86AudioMicMute exec --no-startup-id pacmd list-sources | grep -oP 'index: \d+' | awk '{ print $2 }' | xargs -I{} pactl set-source-mute {} toggle
+bindsym --locked XF86AudioPlay exec playerctl play-pause
+bindsym --locked XF86AudioNext exec playerctl next
+bindsym --locked XF86AudioPrev exec playerctl previous
+
+# Brightness controls
+bindsym --locked XF86MonBrightnessUp exec --no-startup-id light -A 10
+bindsym --locked XF86MonBrightnessDown exec --no-startup-id light -U 10
+
+# Screenshots
+set $screenselect slurp
+set $screenshot grim
+set $screenshotout $HOME/Pictures/screenshots/$(date "+%Y-%m-%d-%H%M%S_shot.png")
+bindsym Print exec $screenshot $screenshotout
+bindsym $mod+Shift+P exec $screenshot -g "$($screenselect)" $screenshotout
+bindsym $mod+Print exec $screenshot -g "$($screenselect)" $screenshotout
+
+# Set cursor theme
+seat seat0 xcursor_theme Quintom_Snow
+
+# Laptop mode
+set $laptopMonitor eDP-1
+bindswitch --reload lid:on output $laptopMonitor disable
+bindswitch --reload lid:off output $laptopMonitor enable
+
+# Monitor handling
+output eDP-1 pos 640 1080 res 1920x1080
+output DP-4 pos 0 0 res 2560x1080
+output DP-5 pos 2560 0 res 2560x1080
+exec_always cat /proc/acpi/button/lid/LID/state | awk '{print $2}' | grep -q 'closed' && swaymsg output eDP-1 disable
+exec_always cat /proc/acpi/button/lid/LID/state | awk '{print $2}' | grep -q 'closed' && swaymsg output DP-5 enable
+exec_always cat /proc/acpi/button/lid/LID/state | awk '{print $2}' | grep -q 'closed' && swaymsg output DP-4 enable
+
+# Autostart
+exec mako
+exec --no-startup-id lxpolkit
+exec firefox
+#exec fusermount -u ~/GoogleDrive
+#exec --no-startup-id /usr/bin/google-drive-ocamlfuse "${HOME}/GoogleDrive"
+
