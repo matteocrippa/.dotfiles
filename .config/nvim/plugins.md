@@ -220,6 +220,11 @@ let g:vim_markdown_toc_autofit = 1
 let g:vim_markdown_frontmatter = 1
 "" let g:vim_markdown_folding_disabled = 0
 
+
+" Dart and flutter
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'thosakwe/vim-flutter'
+
 ```
 This is necessary in order to close where there are no more plugins to install.
 

@@ -1,0 +1,43 @@
+[options]
+font = MesloLGS NF Regular 10
+scrollback_lines = 2000
+
+[colors]
+
+# special
+foreground      = #e5e5e5
+foreground_bold = #e5e5e5
+cursor          = #e5e5e5
+background      = #000000
+
+# black
+color0  = #000000
+color8  = #666666
+
+# red
+color1  = #cd3131
+color9  = #f14c4c
+
+# green
+color2  = #0dbc79
+color10 = #23d18b
+
+# yellow
+color3  = #e5e510
+color11 = #f5f543
+
+# blue
+color4  = #2472c8
+color12 = #3b8eea
+
+# magenta
+color5  = #bc3fbc
+color13 = #d670d6
+
+# cyan
+color6  = #11a8cd
+color14 = #29b8db
+
+# white
+color7  = #ffffff
+color15 = #ffffff
