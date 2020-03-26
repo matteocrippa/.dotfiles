@@ -1,5 +1,5 @@
 # sway
-yay -Sy sway-git waybar lxsession wdisplays mako
+yay -Sy sway wlroots waybar wf-recorder lxsession wdisplays mako
 
 # video
 yay -Sy libva-intel-driver-hybrid
@@ -38,7 +38,7 @@ yay -Sy the_silver_searcher
 yay -Sy neofetch
 
 # tools
-yay -Sy exa
+yay -Sy exa x11-ssh-askpass
 
 # browser
 yay -Sy firefox # ungoogled-chromium
@@ -76,3 +76,7 @@ git config --global core.editor "vim"
 git config --global user.name "matteocrippa"
 git config --global user.email "matteocrippa@users.noreply.github.com"
 
+# extra keys setup
+sudo cp ./90-thinkpad-keyboard.hwdb /etc/udev/hwdb.d/
+sudo udevadm hwdb --update
+sudo udevadm trigger --system-match="event*"
