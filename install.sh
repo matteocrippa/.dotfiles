@@ -38,10 +38,10 @@ yay -Sy the_silver_searcher
 yay -Sy neofetch
 
 # tools
-yay -Sy exa x11-ssh-askpass
+yay -Sy exa x11-ssh-askpass md2pdf
 
 # browser
-yay -Sy firefox # ungoogled-chromium
+yay -Sy firefox chromium-vaapi
 
 # performance
 yay -Sy acpi acpi_call tlp cpupower tp-battery-mode
