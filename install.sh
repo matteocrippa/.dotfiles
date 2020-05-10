@@ -11,7 +11,7 @@ sudo systemctl mask usbmuxd.service
 # development
 yay -Sy nvm
 echo 'source /usr/share/nvm/init-nvm.sh' >> ~/.zshrc
-nvm install node
+nvm install --lts
 yay -Sy android-studio jdk-openjdk
 yay -Sy charles insomnia
 yay -Sy code-git
@@ -85,4 +85,4 @@ sudo udevadm hwdb --update
 sudo udevadm trigger --system-match="event*"
 
 # google drive
-yay -Sy jdrive
+yay -Sy rclone
