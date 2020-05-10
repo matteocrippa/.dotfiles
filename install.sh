@@ -9,6 +9,9 @@ yay -Sy vmware-workspace open-vm-tools
 sudo systemctl mask usbmuxd.service
 
 # development
+yay -Sy nvm
+echo 'source /usr/share/nvm/init-nvm.sh' >> ~/.zshrc
+nvm install node
 yay -Sy android-studio jdk-openjdk
 yay -Sy charles insomnia
 yay -Sy code-git
@@ -80,3 +83,6 @@ git config --global user.email "matteocrippa@users.noreply.github.com"
 sudo cp ./90-thinkpad-keyboard.hwdb /etc/udev/hwdb.d/
 sudo udevadm hwdb --update
 sudo udevadm trigger --system-match="event*"
+
+# google drive
+yay -Sy jdrive
