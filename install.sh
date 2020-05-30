@@ -9,7 +9,7 @@ yay -Sy vmware-workspace open-vm-tools
 sudo systemctl mask usbmuxd.service
 
 # development
-yay -Sy nvm
+yay -Sy nvm pyenv
 echo 'source /usr/share/nvm/init-nvm.sh' >> ~/.zshrc
 nvm install --lts
 yay -Sy android-studio jdk-openjdk
