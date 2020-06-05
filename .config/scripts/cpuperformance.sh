@@ -5,7 +5,7 @@
 state=$( cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor )
 newState=""
 echo -e "\tThe current state is [ $state ]"
-if [ $state != "performance" ] 
+if [ $state != "performance" ]
 then
     sudo -i cpupower frequency-set -g performance >/dev/null
     echo "$state" > /tmp/CpuPowerOptionSwitch.state

@@ -119,7 +119,7 @@ input 1739:0:Synaptics_TM3276-022 {
     # or swaymsg -t get_tree | grep "class"
     #assign [app_id="termite" ] $ws1
     assign [app_id="firefox"] $ws2
-    assign [class="code-git"] $ws4
+    assign [class="code"] $ws4
     assign [class="^jetbrains-ideas$"] $ws7
     assign [class="^jetbrains-studio$"] $ws8
     assign [class="Vmplayer"] $ws9
@@ -255,17 +255,18 @@ bindswitch --reload lid:on output $laptopMonitor disable
 bindswitch --reload lid:off output $laptopMonitor enable
 
 # Monitor handling
-output eDP-1 pos 640 1080 res 1920x1080
-output DP-4 pos 0 0 res 2560x1080
-output DP-5 pos 2560 0 res 2560x1080
-exec_always cat /proc/acpi/button/lid/LID/state | awk '{print $2}' | grep -q 'closed' && swaymsg output eDP-1 disable
-exec_always cat /proc/acpi/button/lid/LID/state | awk '{print $2}' | grep -q 'closed' && swaymsg output DP-5 enable
-exec_always cat /proc/acpi/button/lid/LID/state | awk '{print $2}' | grep -q 'closed' && swaymsg output DP-4 enable
+#output eDP-1 pos 640 1080 res 1920x1080
+#output DP-4 pos 0 0 res 2560x1080
+#output DP-5 pos 2560 0 res 2560x1080
+#exec_always cat /proc/acpi/button/lid/LID/state | awk '{print $2}' | grep -q 'closed' && swaymsg output eDP-1 disable
+#exec_always cat /proc/acpi/button/lid/LID/state | awk '{print $2}' | grep -q 'closed' && swaymsg output DP-5 enable
+#exec_always cat /proc/acpi/button/lid/LID/state | awk '{print $2}' | grep -q 'closed' && swaymsg output DP-4 enable
+
+# Performance
+bindsym XF86Launch1 exec sudo -A ~/.config/scripts/cpuperformance.sh
 
 # Autostart
 exec mako
 exec --no-startup-id lxpolkit
 exec firefox
-#exec fusermount -u ~/GoogleDrive
-#exec --no-startup-id /usr/bin/google-drive-ocamlfuse "${HOME}/GoogleDrive"
-
+exec rclone mount --vfs-cache-mode writes GoogleDrive: $HOME/GoogleDrive

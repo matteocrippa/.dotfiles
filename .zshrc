@@ -19,18 +19,23 @@ plugins=(archlinux git systemd)
 source $ZSH/oh-my-zsh.sh
 
 ## Export
+export SUDO_ASKPASS=/usr/lib/ssh/x11-ssh-askpass
 export ANDROID_HOME=/home/matteo/SDK/Android
+export ANDROID_SDK_ROOT=$ANDROID_HOME
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:/home/matteo/SDK/Flutter/bin
 export PATH=$PATH:/home/matteo/.npm-global/bin:/home/matteo/.npm-global/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
 
+## pyenv
+eval "$(pyenv init -)"
+
 ## Alias
 alias ls="exa --color=auto"
 alias grep="grep --color=auto"
 alias egrep="egrep --color=auto"
-alias t="todo.sh"
 alias gitu="git add . && git commit && git push"
+#alias wfrecorder="wf-recorder -g \"$(slurp)\""
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -39,3 +44,4 @@ alias gitu="git add . && git commit && git push"
 unsetopt PROMPT_SP
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source /usr/share/nvm/init-nvm.sh
