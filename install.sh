@@ -1,5 +1,6 @@
 # sway
 yay -Sy sway wlroots waybar wf-recorder lxsession wdisplays mako
+yay -Sy xdg-desktop-portal-wlr
 
 # video
 yay -Sy libva-intel-driver-hybrid
@@ -13,8 +14,8 @@ yay -Sy nvm pyenv
 echo 'source /usr/share/nvm/init-nvm.sh' >> ~/.zshrc
 nvm install --lts
 yay -Sy android-studio jdk-openjdk
-yay -Sy charles insomnia
-yay -Sy code-git
+yay -Sy charles postman
+yay -Sy code
 
 
 # flutter manually
