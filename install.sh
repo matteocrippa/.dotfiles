@@ -42,7 +42,7 @@ yay -Sy the_silver_searcher
 yay -Sy neofetch
 
 # tools
-yay -Sy exa x11-ssh-askpass md2pdf
+yay -Sy exa x11-ssh-askpass md2pdf ncdu
 
 # browser
 yay -Sy firefox chromium-vaapi
