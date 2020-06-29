@@ -17,18 +17,6 @@ yay -Sy android-studio jdk-openjdk
 yay -Sy charles postman
 yay -Sy code
 
-
-# flutter manually
-git clone https://github.com/flutter/flutter.git -b stable ~/SDK/Flutter
-flutter precache
-flutter doctor
-
-sudo groupadd flutterusers
-sudo gpasswd -a matteo flutterusers
-sudo chown -R :flutterusers /opt/flutter
-sudo chmod -R g+w /opt/flutter
-
-
 # office
 yay -Sy libreoffice-fresh filezilla
 
@@ -45,7 +33,7 @@ yay -Sy neofetch
 yay -Sy exa x11-ssh-askpass md2pdf ncdu
 
 # browser
-yay -Sy firefox chromium-vaapi
+yay -Sy firefox chromium
 
 # performance
 yay -Sy acpi acpi_call tlp cpupower tp-battery-mode
