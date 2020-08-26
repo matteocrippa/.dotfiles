@@ -29,11 +29,14 @@ yay -Sy the_silver_searcher
 # extra
 yay -Sy neofetch
 
+# fonts
+yay -Sy noto-fonts noto-fonts-emoji
+
 # tools
 yay -Sy exa x11-ssh-askpass md2pdf ncdu
 
 # browser
-yay -Sy firefox chromium
+yay -Sy firefox chromium-vaapi
 
 # performance
 yay -Sy acpi acpi_call tlp cpupower tp-battery-mode
