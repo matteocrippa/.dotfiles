@@ -10,7 +10,7 @@ set $mod Mod4
 
 # Terminal + Rofi
 set $term termite
-set $menu rofi -location 0 -show combi | xargs swaymsg exec
+set $menu rofi -location 0 -show combi drun | xargs swaymsg exec
 
 # Background
 output * bg ~/.config/wallpaper.jpg fill
@@ -251,8 +251,8 @@ seat seat0 xcursor_theme Quintom_Snow
 
 # Laptop mode
 set $laptopMonitor eDP-1
-bindswitch --reload lid:on output $laptopMonitor disable
-bindswitch --reload lid:off output $laptopMonitor enable
+bindswitch --reload --locked lid:on output $laptopMonitor disable
+bindswitch --reload --locked lid:off output $laptopMonitor enable
 
 # Monitor handling
 #output eDP-1 pos 640 1080 res 1920x1080

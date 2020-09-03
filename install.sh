@@ -17,8 +17,14 @@ yay -Sy android-studio jdk-openjdk
 yay -Sy charles postman
 yay -Sy code
 
-# office
-yay -Sy libreoffice-fresh filezilla
+# flatpak
+yay -Sy flatpak
+flatpak install flathub fr.natron.Natron -y
+flatpak install flathub org.libreoffice.LibreOffice -y
+flatpak install flathub org.filezillaproject.Filezilla -y
+flatpak install flathub com.getpostman.Postman -y
+flatpak install flathub org.videolan.VLC -y
+flatpak install flathub org.kde.krita -y
 
 # editor
 yay -Sy neovim neovim-symlinks nodejs-neovim python2-neovim python-neovim 
@@ -58,7 +64,7 @@ sudo systemctl enable --now org.cups.cupsd.service
 sudo systemctl start org.cups.cupsd.service
 
 # image
-yay -Sy vlc krita libheif
+yay -Sy libheif
 
 # cleanup
 yay -Ycc
