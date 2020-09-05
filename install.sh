@@ -13,18 +13,20 @@ sudo systemctl mask usbmuxd.service
 yay -Sy nvm pyenv
 echo 'source /usr/share/nvm/init-nvm.sh' >> ~/.zshrc
 nvm install --lts
-yay -Sy android-studio jdk-openjdk
-yay -Sy charles postman
-yay -Sy code
+yay -Sy jdk-openjdk
+yay -Sy charles
 
 # flatpak
-yay -Sy flatpak
+yay -Sy flatpak flatpak-xdg-utils-git
 flatpak install flathub fr.natron.Natron -y
 flatpak install flathub org.libreoffice.LibreOffice -y
 flatpak install flathub org.filezillaproject.Filezilla -y
 flatpak install flathub com.getpostman.Postman -y
 flatpak install flathub org.videolan.VLC -y
 flatpak install flathub org.kde.krita -y
+#flatpak install flathub com.google.AndroidStudio -y
+#flatpak install flathub com.visualstudio.code-oss -y
+flatpak install flathub com.github.tchx84.Flatseal -y
 
 # editor
 yay -Sy neovim neovim-symlinks nodejs-neovim python2-neovim python-neovim 

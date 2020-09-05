@@ -266,6 +266,7 @@ bindswitch --reload --locked lid:off output $laptopMonitor enable
 bindsym XF86Launch1 exec sudo -A ~/.config/scripts/cpuperformance.sh
 
 # Autostart
+exec "dbus-update-activation-environment --systemd DISPLAY MOZ_DBUS_REMOTE"
 exec mako
 exec --no-startup-id lxpolkit
 exec firefox
