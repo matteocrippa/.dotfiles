@@ -156,3 +156,7 @@ window#waybar {
 #custom-battery1.discharging {
   border-bottom: 2px solid #bff874;
 }
+
+#custom-pomodoro.paused {
+  border-bottom: 3px solid @yellow;
+}
