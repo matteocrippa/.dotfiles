@@ -35,7 +35,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 yay -Sy the_silver_searcher
 
 # extra
-yay -Sy neofetch
+yay -Sy neofetch keepassxc
 
 # fonts
 yay -Sy noto-fonts noto-fonts-emoji
