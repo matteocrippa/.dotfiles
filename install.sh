@@ -27,6 +27,7 @@ flatpak install flathub org.kde.krita -y
 #flatpak install flathub com.google.AndroidStudio -y
 #flatpak install flathub com.visualstudio.code-oss -y
 flatpak install flathub com.github.tchx84.Flatseal -y
+flatpak install flathub com.uploadedlobster.peek -y
 
 # editor
 yay -Sy neovim neovim-symlinks nodejs-neovim python2-neovim python-neovim 
